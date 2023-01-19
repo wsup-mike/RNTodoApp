@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 import colors from "./Colors";
 
 export default class App extends React.Component {
@@ -16,9 +17,10 @@ export default class App extends React.Component {
           <View style={styles.divider} />
         </View>
 
-      
-
-
+        <View style={{ marginVertical: 48 }}>
+          <TouchableOpacity>
+            <AntDesign name="plus" size={16} color={colors.blue} />
+          </TouchableOpacity>
         </View>
       </View>
     );
