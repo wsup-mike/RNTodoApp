@@ -5,7 +5,6 @@ import colors from "../Colors";
 export default TodoList = ({ list }) => {
   const completedCount = list.todos.filter((todo) => todo.completed).length;
   const totalCount = list.todos.length;
-  console.log(totalCount);
 
   return (
     <View style={[styles.listContainer, { backgroundColor: list.color }]}>

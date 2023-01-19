@@ -12,6 +12,7 @@ import { AntDesign } from "@expo/vector-icons";
 import colors from "./Colors";
 import tempData from "./tempData";
 import TodoList from "./components/TodoList";
+import AddListModal from "./components/AddListModal";
 
 export default class App extends React.Component {
   state = {
@@ -25,10 +26,12 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Modal animationType="fade" visible={this.state.addTodoVisible}>
-          <View>
-            <Text>I'm a Modal!</Text>
-          </View>
+        <Modal
+          animationType="fade"
+          visible={this.state.addTodoVisible}
+          onRequestClose={() => this.toggleAddTodoModal()}
+        >
+          <AddListModal />
         </Modal>
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
@@ -39,9 +42,7 @@ export default class App extends React.Component {
           <View style={styles.divider} />
         </View>
 
-        <View
-          style={{ marginVertical: 48, borderColor: "black", borderWidth: 1 }}
-        >
+        <View style={{ marginVertical: 48 }}>
           <TouchableOpacity
             style={styles.addList}
             onPress={() => this.toggleAddTodoModal()}
