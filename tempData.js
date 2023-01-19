@@ -5,7 +5,7 @@ export default tempData = [
     todos: [
       {
         title: "Get gas",
-        completed: false,
+        completed: true,
       },
       {
         title: "Bananas",
@@ -43,7 +43,7 @@ export default tempData = [
     todos: [
       {
         title: "Quinoa",
-        completed: false,
+        completed: true,
       },
       {
         title: "Flour",
@@ -66,7 +66,7 @@ export default tempData = [
     todos: [
       {
         title: "Loganisa",
-        completed: false,
+        completed: true,
       },
       {
         title: "Wrappers",
@@ -82,7 +82,7 @@ export default tempData = [
       },
       {
         title: "Yogurt",
-        completed: false,
+        completed: true,
       },
     ],
   },

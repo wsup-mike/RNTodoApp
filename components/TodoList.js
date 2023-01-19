@@ -3,17 +3,21 @@ import { StyleSheet, Text, View } from "react-native";
 import colors from "../Colors";
 
 export default TodoList = ({ list }) => {
+  const completedCount = list.todos.filter((todo) => todo.completed).length;
+  const totalCount = list.todos.length;
+  console.log(totalCount);
+
   return (
     <View style={[styles.listContainer, { backgroundColor: list.color }]}>
       <Text style={styles.listTitle}>{list.name}</Text>
 
       <View>
         <View style={{ alignItems: "center" }}>
-          <Text style={styles.count}>0</Text>
+          <Text style={styles.count}>{totalCount - completedCount}</Text>
           <Text style={styles.subtitle}>Remaining</Text>
         </View>
         <View style={{ alignItems: "center" }}>
-          <Text style={styles.count}>0</Text>
+          <Text style={styles.count}>{completedCount}</Text>
           <Text style={styles.subtitle}>Completed</Text>
         </View>
       </View>
