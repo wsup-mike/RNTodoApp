@@ -87,3 +87,5 @@ export default tempData = [
     ],
   },
 ];
+
+// #04ffd4 mint, #ff27c7 pink, #67001a burgundy

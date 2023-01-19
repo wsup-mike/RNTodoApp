@@ -6,6 +6,7 @@ import {
   View,
   TouchableOpacity,
   FlatList,
+  Modal,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import colors from "./Colors";
@@ -13,9 +14,22 @@ import tempData from "./tempData";
 import TodoList from "./components/TodoList";
 
 export default class App extends React.Component {
+  state = {
+    addTodoVisible: false,
+  };
+
+  toggleAddTodoModal() {
+    this.setState({ addTodoVisible: !this.state.addTodoVisible });
+  }
+
   render() {
     return (
       <View style={styles.container}>
+        <Modal animationType="fade" visible={this.state.addTodoVisible}>
+          <View>
+            <Text>I'm a Modal!</Text>
+          </View>
+        </Modal>
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
@@ -28,7 +42,10 @@ export default class App extends React.Component {
         <View
           style={{ marginVertical: 48, borderColor: "black", borderWidth: 1 }}
         >
-          <TouchableOpacity style={styles.addList}>
+          <TouchableOpacity
+            style={styles.addList}
+            onPress={() => this.toggleAddTodoModal()}
+          >
             <AntDesign name="plus" size={16} color={colors.blue} />
           </TouchableOpacity>
 
