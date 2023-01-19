@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
   Modal,
+  KeyboardAvoidingView,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import colors from "./Colors";
@@ -31,7 +32,7 @@ export default class App extends React.Component {
           visible={this.state.addTodoVisible}
           onRequestClose={() => this.toggleAddTodoModal()}
         >
-          <AddListModal />
+          <AddListModal closeModal={() => this.toggleAddTodoModal()} />
         </Modal>
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
