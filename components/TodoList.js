@@ -7,6 +7,10 @@ export default class TodoList extends React.Component {
     showListVisible: false,
   };
 
+  toggleListModal() {
+    this.setState({ showListVisible: !this.state.showListVisible });
+  }
+
   render() {
     const list = this.props.list;
     const completedCount = list.todos.filter((todo) => todo.completed).length;
