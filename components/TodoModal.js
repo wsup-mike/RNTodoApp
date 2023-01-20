@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
   KeyboardAvoidingView,
+  TextInput,
 } from "react-native";
 import colors from "../Colors";
 import { AntDesign } from "@expo/vector-icons";
@@ -70,7 +71,16 @@ export default class TodoModal extends React.Component {
         <KeyboardAvoidingView
           style={[styles.section, styles.footer]}
           behavior="padding"
-        ></KeyboardAvoidingView>
+        >
+          <TextInput
+            style={[styles.addTodo, { borderColor: this.state.color }]}
+          />
+          <TouchableOpacity
+            style={[styles.addTodo, { backgroundColor: this.state.color }]}
+          >
+            <AntDesign name="plus" size={16} color={colors.white} />
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
       </SafeAreaView>
     );
   }
