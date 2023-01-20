@@ -29,6 +29,11 @@ export default class TodoModal extends React.Component {
         >
           <AntDesign name="close" size={24} color={colors.black} />
         </TouchableOpacity>
+
+        <View style={[styles.section, styles.header]}>
+          <Text style={styles.title}>{this.state.name}</Text>
+          <Text style={styles.taskCount}></Text>
+        </View>
       </SafeAreaView>
     );
   }
