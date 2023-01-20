@@ -24,7 +24,7 @@ export default class TodoModal extends React.Component {
       <View style={styles.todoContainer}>
         <TouchableOpacity>
           <Ionicons
-            name="ios-square-outline"
+            name={todo.completed ? "ios-square" : "ios-square-outline"}
             size={24}
             color={colors.gray}
             style={{ width: 32 }}
@@ -156,5 +156,6 @@ const styles = StyleSheet.create({
   todo: {
     color: colors.black,
     fontWeight: "700",
+    fontSize: 16,
   },
 });
