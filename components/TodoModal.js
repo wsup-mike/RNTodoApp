@@ -31,7 +31,13 @@ export default class TodoModal extends React.Component {
           <AntDesign name="close" size={24} color={colors.black} />
         </TouchableOpacity>
 
-        <View style={[styles.section, styles.header]}>
+        <View
+          style={[
+            styles.section,
+            styles.header,
+            { borderBottomColor: this.state.color },
+          ]}
+        >
           <Text style={styles.title}>{this.state.name}</Text>
           <Text style={styles.taskCount}>
             {completedCount} of {taskCount} tasks
@@ -49,11 +55,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  section: {},
+  section: {
+    flex: 1,
+    alignSelf: "stretch",
+  },
 
-  header: {},
+  header: {
+    justifyContent: "flex-end",
+    marginLeft: 64,
+    borderBottomWidth: 3,
+  },
 
-  title: {},
+  title: {
+    fontSize: 30,
+    fontWeight: "800",
+    color: colors.black,
+  },
 
   taskCount: {},
 });
