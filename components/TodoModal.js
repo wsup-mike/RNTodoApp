@@ -58,6 +58,11 @@ export default class TodoModal extends React.Component {
             data={this.state.todos}
             renderItem={({ item }) => this.renderTodo(item)}
             keyExtractor={(item) => item.title}
+            contentContainerStyle={{
+              paddingHorizontal: 32,
+              paddingVertical: 64,
+            }}
+            showsVerticalScrollIndicator={false}
           />
         </View>
       </SafeAreaView>
