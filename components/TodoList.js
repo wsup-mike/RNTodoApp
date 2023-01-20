@@ -2,26 +2,28 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import colors from "../Colors";
 
-export default TodoList = ({ list }) => {
-  const completedCount = list.todos.filter((todo) => todo.completed).length;
-  const totalCount = list.todos.length;
+export default class TodoList extends React.Component {\
+  render() {
+    const completedCount = list.todos.filter((todo) => todo.completed).length;
+    const totalCount = list.todos.length;
 
-  return (
-    <View style={[styles.listContainer, { backgroundColor: list.color }]}>
-      <Text style={styles.listTitle}>{list.name}</Text>
+    return (
+      <View style={[styles.listContainer, { backgroundColor: list.color }]}>
+        <Text style={styles.listTitle}>{list.name}</Text>
 
-      <View>
-        <View style={{ alignItems: "center" }}>
-          <Text style={styles.count}>{totalCount - completedCount}</Text>
-          <Text style={styles.subtitle}>Remaining</Text>
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <Text style={styles.count}>{completedCount}</Text>
-          <Text style={styles.subtitle}>Completed</Text>
+        <View>
+          <View style={{ alignItems: "center" }}>
+            <Text style={styles.count}>{totalCount - completedCount}</Text>
+            <Text style={styles.subtitle}>Remaining</Text>
+          </View>
+          <View style={{ alignItems: "center" }}>
+            <Text style={styles.count}>{completedCount}</Text>
+            <Text style={styles.subtitle}>Completed</Text>
+          </View>
         </View>
       </View>
-    </View>
-  );
+    );
+    }
 };
 
 const styles = StyleSheet.create({
