@@ -5,6 +5,7 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
+  FlatList,
 } from "react-native";
 import colors from "../Colors";
 import { AntDesign } from "@expo/vector-icons";
@@ -14,6 +15,14 @@ export default class TodoModal extends React.Component {
     name: this.props.list.name,
     color: this.props.list.color,
     todos: this.props.list.todos,
+  };
+
+  renderTodo = (todo) => {
+    return (
+      <View>
+        <Text>{todo.title}</Text>
+      </View>
+    );
   };
 
   render() {
