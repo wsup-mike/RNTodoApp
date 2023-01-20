@@ -5,7 +5,7 @@ export default class TodoModal extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Screen</Text>
+        <Text>List Modal</Text>
       </View>
     );
   }
