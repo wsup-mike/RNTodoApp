@@ -19,8 +19,9 @@ export default class TodoModal extends React.Component {
   render() {
     const taskCount = this.state.todos.length;
     const completedCount = this.state.todos.filter(
-      (todo = todo.completed)
+      (todo) => todo.completed
     ).length;
+
     return (
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
@@ -32,7 +33,9 @@ export default class TodoModal extends React.Component {
 
         <View style={[styles.section, styles.header]}>
           <Text style={styles.title}>{this.state.name}</Text>
-          <Text style={styles.taskCount}></Text>
+          <Text style={styles.taskCount}>
+            {completedCount} of {taskCount} tasks
+          </Text>
         </View>
       </SafeAreaView>
     );
@@ -45,4 +48,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+
+  section: {},
+
+  header: {},
+
+  title: {},
+
+  taskCount: {},
 });
