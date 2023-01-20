@@ -18,6 +18,9 @@ export default class TodoModal extends React.Component {
 
   render() {
     const taskCount = this.state.todos.length;
+    const completedCount = this.state.todos.filter(
+      (todo = todo.completed)
+    ).length;
     return (
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
