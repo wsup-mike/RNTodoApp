@@ -17,22 +17,24 @@ export default class TodoList extends React.Component {
     const totalCount = list.todos.length;
 
     return (
-      <TouchableOpacity
-        style={[styles.listContainer, { backgroundColor: list.color }]}
-      >
-        <Text style={styles.listTitle}>{list.name}</Text>
+      <View>
+        <TouchableOpacity
+          style={[styles.listContainer, { backgroundColor: list.color }]}
+        >
+          <Text style={styles.listTitle}>{list.name}</Text>
 
-        <View>
-          <View style={{ alignItems: "center" }}>
-            <Text style={styles.count}>{totalCount - completedCount}</Text>
-            <Text style={styles.subtitle}>Remaining</Text>
+          <View>
+            <View style={{ alignItems: "center" }}>
+              <Text style={styles.count}>{totalCount - completedCount}</Text>
+              <Text style={styles.subtitle}>Remaining</Text>
+            </View>
+            <View style={{ alignItems: "center" }}>
+              <Text style={styles.count}>{completedCount}</Text>
+              <Text style={styles.subtitle}>Completed</Text>
+            </View>
           </View>
-          <View style={{ alignItems: "center" }}>
-            <Text style={styles.count}>{completedCount}</Text>
-            <Text style={styles.subtitle}>Completed</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
     );
   }
 }
