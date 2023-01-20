@@ -6,6 +6,8 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from "react-native";
+import colors from "../Colors";
+import { AntDesign } from "@expo/vector-icons";
 
 export default class TodoModal extends React.Component {
   state = {
@@ -16,8 +18,12 @@ export default class TodoModal extends React.Component {
 
   render() {
     return (
-      <SafeAreaView>
-        <TouchableOpacity></TouchableOpacity>
+      <SafeAreaView style={styles.container}>
+        <TouchableOpacity
+          style={{ position: "absolute", top: 64, right: 32, zIndex: 10 }}
+        >
+          <AntDesign name="close" size={24} color={colors.black} />
+        </TouchableOpacity>
       </SafeAreaView>
     );
   }
