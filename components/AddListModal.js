@@ -25,6 +25,16 @@ export default class AddListModal extends React.Component {
     color: this.backgroundColors[0],
   };
 
+  renderColors() {
+    return this.backgroundColors.map((color) => {
+      <TouchableOpacity
+        key={color}
+        style={[styles.colorSelect, { backgroundColor: color }]}
+        onPress={() => this.setState({ color })}
+      />;
+    });
+  }
+
   render() {
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding">
