@@ -28,7 +28,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Modal
-          animationType="fade"
+          animationType="slide"
           visible={this.state.addTodoVisible}
           onRequestClose={() => this.toggleAddTodoModal()}
         >
