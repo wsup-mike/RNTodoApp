@@ -11,8 +11,18 @@ import { AntDesign } from "@expo/vector-icons";
 import colors from "../Colors";
 
 export default class AddListModal extends React.Component {
+  backgroundColors = [
+    "#24A6D9",
+    "#8022D9",
+    "#03c03c",
+    "#04ffd4",
+    "#ff27c7",
+    "#67001a",
+  ];
+
   state = {
     name: "",
+    color: this.backgroundColors[0],
   };
 
   render() {
@@ -33,7 +43,7 @@ export default class AddListModal extends React.Component {
             onChangeText={(text) => this.setState({ name: text })}
           />
           <TouchableOpacity
-            style={[styles.create, { backgroundColor: "blue" }]}
+            style={[styles.create, { backgroundColor: this.state.color }]}
           >
             <Text style={{ color: colors.white, fontWeight: "600" }}>
               Create list
