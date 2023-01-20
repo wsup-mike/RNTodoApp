@@ -1,5 +1,11 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
 
 export default class TodoModal extends React.Component {
   state = {
@@ -10,9 +16,9 @@ export default class TodoModal extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>List Modal</Text>
-      </View>
+      <SafeAreaView>
+        <TouchableOpacity></TouchableOpacity>
+      </SafeAreaView>
     );
   }
 }
