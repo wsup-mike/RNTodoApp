@@ -11,6 +11,10 @@ import { AntDesign } from "@expo/vector-icons";
 import colors from "../Colors";
 
 export default class AddListModal extends React.Component {
+  state = {
+    name: "",
+  };
+
   render() {
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding">
@@ -23,7 +27,11 @@ export default class AddListModal extends React.Component {
 
         <View style={{ alignSelf: "stretch", marginHorizontal: 32 }}>
           <Text style={styles.title}>Create Todo List</Text>
-          <TextInput style={styles.input} placeholder="List Name" />
+          <TextInput
+            style={styles.input}
+            placeholder="List Name"
+            onChangeText={(text) => this.setState({ name: text })}
+          />
           <TouchableOpacity
             style={[styles.create, { backgroundColor: "blue" }]}
           >
