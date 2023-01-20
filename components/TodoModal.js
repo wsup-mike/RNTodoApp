@@ -21,7 +21,7 @@ export default class TodoModal extends React.Component {
 
   renderTodo = (todo) => {
     return (
-      <View>
+      <View style={styles.todoContainer}>
         <Text>{todo.title}</Text>
       </View>
     );
@@ -73,7 +73,7 @@ export default class TodoModal extends React.Component {
           behavior="padding"
         >
           <TextInput
-            style={[styles.addTodo, { borderColor: this.state.color }]}
+            style={[styles.input, { borderColor: this.state.color }]}
           />
           <TouchableOpacity
             style={[styles.addTodo, { backgroundColor: this.state.color }]}
@@ -137,5 +137,11 @@ const styles = StyleSheet.create({
     padding: 16,
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  todoContainer: {
+    paddingVertical: 16,
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
