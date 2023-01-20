@@ -52,6 +52,14 @@ export default class TodoModal extends React.Component {
             {completedCount} of {taskCount} tasks
           </Text>
         </View>
+
+        <View style={[styles.section, { flex: 3 }]}>
+          <FlatList
+            data={this.state.todos}
+            renderItem={({ item }) => this.renderTodo(item)}
+            keyExtractor={(item) => item.title}
+          />
+        </View>
       </SafeAreaView>
     );
   }
