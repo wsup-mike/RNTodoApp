@@ -29,6 +29,8 @@ export default class App extends React.Component {
     return <TodoList list={list} />;
   };
 
+  addList = (list) => {};
+
   render() {
     return (
       <View style={styles.container}>
@@ -37,7 +39,10 @@ export default class App extends React.Component {
           visible={this.state.addTodoVisible}
           onRequestClose={() => this.toggleAddTodoModal()}
         >
-          <AddListModal closeModal={() => this.toggleAddTodoModal()} />
+          <AddListModal
+            closeModal={() => this.toggleAddTodoModal()}
+            addList={this.addList}
+          />
         </Modal>
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
@@ -61,7 +66,7 @@ export default class App extends React.Component {
 
         <View style={{ height: 275, paddingLeft: 32 }}>
           <FlatList
-            data={tempData}
+            data={this.state.lists}
             keyExtractor={(item) => item.name}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
