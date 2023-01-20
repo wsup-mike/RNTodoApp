@@ -35,7 +35,7 @@ export default class TodoModal extends React.Component {
             styles.todo,
             {
               textDecorationLine: todo.completed ? "line-through" : "none",
-              color: colors.black,
+              color: todo.completed ? colors.gray : colors.black,
             },
           ]}
         >
@@ -80,7 +80,7 @@ export default class TodoModal extends React.Component {
             keyExtractor={(item) => item.title}
             contentContainerStyle={{
               paddingHorizontal: 32,
-              paddingVertical: 64,
+              paddingVertical: 32,
             }}
             showsVerticalScrollIndicator={false}
           />

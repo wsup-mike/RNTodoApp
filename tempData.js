@@ -84,6 +84,26 @@ export default tempData = [
         title: "Yogurt",
         completed: true,
       },
+
+      {
+        title: "Nuts",
+        completed: false,
+      },
+
+      {
+        title: "Bacon",
+        completed: true,
+      },
+
+      {
+        title: "gum",
+        completed: false,
+      },
+
+      {
+        title: "Eggs",
+        completed: true,
+      },
     ],
   },
 ];

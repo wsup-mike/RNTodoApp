@@ -18,6 +18,7 @@ import AddListModal from "./components/AddListModal";
 export default class App extends React.Component {
   state = {
     addTodoVisible: false,
+    lists: tempData,
   };
 
   toggleAddTodoModal() {
