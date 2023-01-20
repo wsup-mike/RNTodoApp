@@ -17,6 +17,7 @@ export default class TodoModal extends React.Component {
   };
 
   render() {
+    const taskCount = this.state.todos.length;
     return (
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
