@@ -116,4 +116,26 @@ const styles = StyleSheet.create({
     color: colors.gray,
     fontWeight: "600",
   },
+
+  footer: {
+    paddingHorizontal: 32,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  input: {
+    flex: 1,
+    height: 48,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 6,
+    marginRight: 8,
+    paddingHorizontal: 8,
+  },
+
+  addTodo: {
+    borderRadius: 4,
+    padding: 16,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
