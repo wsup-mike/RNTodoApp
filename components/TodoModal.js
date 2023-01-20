@@ -30,7 +30,17 @@ export default class TodoModal extends React.Component {
             style={{ width: 32 }}
           />
         </TouchableOpacity>
-        <Text style={[styles.todo, { color: colors.black }]}>{todo.title}</Text>
+        <Text
+          style={[
+            styles.todo,
+            {
+              textDecorationLine: todo.completed ? "line-through" : "none",
+              color: colors.black,
+            },
+          ]}
+        >
+          {todo.title}
+        </Text>
       </View>
     );
   };
