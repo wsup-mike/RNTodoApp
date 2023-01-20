@@ -29,6 +29,7 @@ export default class TodoList extends React.Component {
         </Modal>
         <TouchableOpacity
           style={[styles.listContainer, { backgroundColor: list.color }]}
+          onPress={() => this.toggleListModal()}
         >
           <Text style={styles.listTitle}>{list.name}</Text>
 
