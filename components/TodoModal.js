@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   FlatList,
+  KeyboardAvoidingView,
 } from "react-native";
 import colors from "../Colors";
 import { AntDesign } from "@expo/vector-icons";
@@ -65,6 +66,11 @@ export default class TodoModal extends React.Component {
             showsVerticalScrollIndicator={false}
           />
         </View>
+
+        <KeyboardAvoidingView
+          style={[styles.section, styles.footer]}
+          behavior="padding"
+        ></KeyboardAvoidingView>
       </SafeAreaView>
     );
   }
