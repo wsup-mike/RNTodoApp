@@ -21,6 +21,7 @@ export default class TodoModal extends React.Component {
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
           style={{ position: "absolute", top: 64, right: 32, zIndex: 10 }}
+          onPress={this.props.closeModal}
         >
           <AntDesign name="close" size={24} color={colors.black} />
         </TouchableOpacity>
