@@ -16,6 +16,7 @@ export default class AddListModal extends React.Component {
     "#8022D9",
     "#03c03c",
     "#04ffd4",
+    "#e6a91d",
     "#ff27c7",
     "#67001a",
   ];
@@ -27,11 +28,13 @@ export default class AddListModal extends React.Component {
 
   renderColors() {
     return this.backgroundColors.map((color) => {
-      <TouchableOpacity
-        key={color}
-        style={[styles.colorSelect, { backgroundColor: color }]}
-        onPress={() => this.setState({ color })}
-      />;
+      return (
+        <TouchableOpacity
+          key={color}
+          style={[styles.colorSelect, { backgroundColor: color }]}
+          onPress={() => this.setState({ color })}
+        />
+      );
     });
   }
 
@@ -52,6 +55,9 @@ export default class AddListModal extends React.Component {
             placeholder="List Name"
             onChangeText={(text) => this.setState({ name: text })}
           />
+
+          <View style={styles.renderColors}>{this.renderColors()}</View>
+
           <TouchableOpacity
             style={[styles.create, { backgroundColor: this.state.color }]}
           >
@@ -96,5 +102,17 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  colorSelect: {
+    width: 30,
+    height: 30,
+    borderRadius: 4,
+  },
+
+  renderColors: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 12,
   },
 });
