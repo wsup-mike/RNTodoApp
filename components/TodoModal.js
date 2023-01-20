@@ -72,5 +72,10 @@ const styles = StyleSheet.create({
     color: colors.black,
   },
 
-  taskCount: {},
+  taskCount: {
+    marginTop: 4,
+    marginBottom: 16,
+    color: colors.gray,
+    fontWeight: "600",
+  },
 });
