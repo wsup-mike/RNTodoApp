@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import colors from "../Colors";
 
 export default class TodoList extends React.Component {
@@ -17,7 +17,9 @@ export default class TodoList extends React.Component {
     const totalCount = list.todos.length;
 
     return (
-      <View style={[styles.listContainer, { backgroundColor: list.color }]}>
+      <TouchableOpacity
+        style={[styles.listContainer, { backgroundColor: list.color }]}
+      >
         <Text style={styles.listTitle}>{list.name}</Text>
 
         <View>
@@ -30,7 +32,7 @@ export default class TodoList extends React.Component {
             <Text style={styles.subtitle}>Completed</Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
