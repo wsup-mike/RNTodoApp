@@ -74,6 +74,7 @@ export default class AddListModal extends React.Component {
 
           <TouchableOpacity
             style={[styles.create, { backgroundColor: this.state.color }]}
+            onPress={this.createTodo}
           >
             <Text style={{ color: colors.white, fontWeight: "600" }}>
               Create list
