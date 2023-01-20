@@ -10,7 +10,7 @@ import {
   TextInput,
 } from "react-native";
 import colors from "../Colors";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 
 export default class TodoModal extends React.Component {
   state = {
@@ -22,7 +22,15 @@ export default class TodoModal extends React.Component {
   renderTodo = (todo) => {
     return (
       <View style={styles.todoContainer}>
-        <Text>{todo.title}</Text>
+        <TouchableOpacity>
+          <Ionicons
+            name="ios-square-outline"
+            size={24}
+            color={colors.gray}
+            style={{ width: 32 }}
+          />
+        </TouchableOpacity>
+        <Text style={[styles.todo, { color: colors.black }]}>{todo.title}</Text>
       </View>
     );
   };
@@ -143,5 +151,10 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     flexDirection: "row",
     alignItems: "center",
+  },
+
+  todo: {
+    color: colors.black,
+    fontWeight: "700",
   },
 });
