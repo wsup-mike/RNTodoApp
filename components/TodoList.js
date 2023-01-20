@@ -2,8 +2,13 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import colors from "../Colors";
 
-export default class TodoList extends React.Component {\
+export default class TodoList extends React.Component {
+  state = {
+    showListVisible: false,
+  };
+
   render() {
+    const list = this.props.list;
     const completedCount = list.todos.filter((todo) => todo.completed).length;
     const totalCount = list.todos.length;
 
@@ -23,8 +28,8 @@ export default class TodoList extends React.Component {\
         </View>
       </View>
     );
-    }
-};
+  }
+}
 
 const styles = StyleSheet.create({
   listContainer: {
