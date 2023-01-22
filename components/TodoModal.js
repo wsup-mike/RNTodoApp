@@ -61,10 +61,10 @@ export default class TodoModal extends React.Component {
           style={[
             styles.section,
             styles.header,
-            { borderBottomColor: this.state.color },
+            { borderBottomColor: list.color },
           ]}
         >
-          <Text style={styles.title}>{this.state.name}</Text>
+          <Text style={styles.title}>{list.name}</Text>
           <Text style={styles.taskCount}>
             {completedCount} of {taskCount} tasks
           </Text>
@@ -72,7 +72,7 @@ export default class TodoModal extends React.Component {
 
         <View style={[styles.section, { flex: 3 }]}>
           <FlatList
-            data={this.state.todos}
+            data={list.todos}
             renderItem={({ item }) => this.renderTodo(item)}
             keyExtractor={(item) => item.title}
             contentContainerStyle={{
@@ -87,11 +87,9 @@ export default class TodoModal extends React.Component {
           style={[styles.section, styles.footer]}
           behavior="padding"
         >
-          <TextInput
-            style={[styles.input, { borderColor: this.state.color }]}
-          />
+          <TextInput style={[styles.input, { borderColor: list.color }]} />
           <TouchableOpacity
-            style={[styles.addTodo, { backgroundColor: this.state.color }]}
+            style={[styles.addTodo, { backgroundColor: list.color }]}
           >
             <AntDesign name="plus" size={16} color={colors.white} />
           </TouchableOpacity>
