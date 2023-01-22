@@ -23,7 +23,7 @@ export default class TodoModal extends React.Component {
     this.props.updateList(list);
   };
 
-  renderTodo = (todo) => {
+  renderTodo = (todo, index) => {
     return (
       <View style={styles.todoContainer}>
         <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
@@ -80,7 +80,7 @@ export default class TodoModal extends React.Component {
           <View style={[styles.section, { flex: 3 }]}>
             <FlatList
               data={list.todos}
-              renderItem={({ item }) => this.renderTodo(item)}
+              renderItem={({ item, index }) => this.renderTodo(item, index)}
               keyExtractor={(item) => item.title}
               contentContainerStyle={{
                 paddingHorizontal: 32,
