@@ -13,11 +13,7 @@ import colors from "../Colors";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 
 export default class TodoModal extends React.Component {
-  state = {
-    name: this.props.list.name,
-    color: this.props.list.color,
-    todos: this.props.list.todos,
-  };
+  state = {};
 
   renderTodo = (todo) => {
     return (
