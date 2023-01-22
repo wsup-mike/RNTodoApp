@@ -13,7 +13,9 @@ import colors from "../Colors";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 
 export default class TodoModal extends React.Component {
-  state = {};
+  state = {
+    newTodo: "",
+  };
 
   renderTodo = (todo) => {
     return (
@@ -42,6 +44,7 @@ export default class TodoModal extends React.Component {
   };
 
   render() {
+    const list = this.props.list;
     const taskCount = this.state.todos.length;
     const completedCount = this.state.todos.filter(
       (todo) => todo.completed
