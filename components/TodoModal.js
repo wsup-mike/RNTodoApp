@@ -83,7 +83,7 @@ export default class TodoModal extends React.Component {
           />
         </View>
 
-        <View style={[styles.section, styles.footer]} behavior="padding">
+        <View style={[styles.section, styles.footer]}>
           <TextInput style={[styles.input, { borderColor: list.color }]} />
           <TouchableOpacity
             style={[styles.addTodo, { backgroundColor: list.color }]}
