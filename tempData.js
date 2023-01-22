@@ -1,5 +1,6 @@
 export default tempData = [
   {
+    id: 1,
     name: "Sams Club",
     color: "#24A6D9",
     todos: [
@@ -19,6 +20,7 @@ export default tempData = [
   },
 
   {
+    id: 2,
     name: "Food4Less",
     color: "#8022D9",
     todos: [
@@ -38,6 +40,7 @@ export default tempData = [
   },
 
   {
+    id: 3,
     name: "Jewel",
     color: "#03c03c",
     todos: [
@@ -61,6 +64,7 @@ export default tempData = [
   },
 
   {
+    id: 4,
     name: "Oakton Market",
     color: "#e6a91d",
     todos: [
