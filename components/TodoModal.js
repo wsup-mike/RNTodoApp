@@ -26,7 +26,7 @@ export default class TodoModal extends React.Component {
   renderTodo = (todo) => {
     return (
       <View style={styles.todoContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
           <Ionicons
             name={todo.completed ? "ios-square" : "ios-square-outline"}
             size={24}
