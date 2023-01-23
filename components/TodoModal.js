@@ -106,15 +106,11 @@ export default class TodoModal extends React.Component {
             </Text>
           </View>
 
-          <View style={[styles.section, { flex: 3 }]}>
+          <View style={[styles.section, { flex: 3, marginVertical: 16 }]}>
             <FlatList
               data={list.todos}
               renderItem={({ item, index }) => this.renderTodo(item, index)}
               keyExtractor={(_, index) => index.toString()}
-              contentContainerStyle={{
-                paddingHorizontal: 32,
-                paddingVertical: 32,
-              }}
               showsVerticalScrollIndicator={false}
             />
           </View>
@@ -197,6 +193,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     flexDirection: "row",
     alignItems: "center",
+    paddingLeft: 32,
   },
 
   todo: {
