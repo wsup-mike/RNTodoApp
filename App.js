@@ -19,10 +19,9 @@ import Fire from "./Fire";
 export default class App extends React.Component {
   state = {
     addTodoVisible: false,
-    lists: tempData,
-    user: {
-      uid: "",
-    },
+    lists: [],
+    user: {},
+    loading: true,
   };
 
   componentDidMount() {
@@ -32,7 +31,9 @@ export default class App extends React.Component {
       }
 
       firebase.getLists((lists) => {
-        this.setState({ lists, user }, () => {});
+        this.setState({ lists, user }, () => {
+          this.setState({ loading: false });
+        });
       });
 
       this.setState({ user });
