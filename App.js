@@ -23,7 +23,11 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    firebase = new Fire();
+    firebase = new Fire((error, user) => {
+      if (error) {
+        return alert("Uh oh, something went wrong");
+      }
+    });
   }
 
   toggleAddTodoModal() {
@@ -137,3 +141,5 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
 });
+
+// Resume at 5:30

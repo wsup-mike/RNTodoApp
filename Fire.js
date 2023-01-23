@@ -15,18 +15,21 @@ class Fire {
     this.init(callback);
   }
 
-  init() {
+  init(callback) {
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
 
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        callback(null, user);
       } else {
         firebase
           .auth()
           .signInAnonymously()
-          .catch((error) => {});
+          .catch((error) => {
+            callback(error);
+          });
       }
     });
   }
