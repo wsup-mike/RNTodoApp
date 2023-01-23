@@ -42,6 +42,10 @@ class Fire {
       .doc(this.userId)
       .collection("lists");
   }
+
+  get userId() {
+    return firebase.auth().currentUser.uid;
+  }
 }
 
 export default Fire;
