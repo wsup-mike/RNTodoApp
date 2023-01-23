@@ -30,6 +30,8 @@ export default class App extends React.Component {
       if (error) {
         return alert("Uh oh, something went wrong");
       }
+
+      this.setState({ user });
     });
   }
 
