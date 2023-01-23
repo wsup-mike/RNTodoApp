@@ -41,6 +41,16 @@ class Fire {
       .collection("users")
       .doc(this.userId)
       .collection("lists");
+
+    this.unsubscribe = ref.onSnapshot((snapshot) => {
+      lists: [];
+
+      snapshot.forEach((doc) => {
+        lists.push({ id: doc.id, ...doc.data() });
+      });
+
+      callback(lists);
+    });
   }
 
   get userId() {
