@@ -151,6 +151,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
+    paddingTop: 16,
     justifyContent: "flex-end",
     marginLeft: 64,
     borderBottomWidth: 3,
