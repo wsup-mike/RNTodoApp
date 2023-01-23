@@ -11,6 +11,10 @@ const firebaseConfig = {
 };
 
 class Fire {
+  constructor(callback) {
+    this.init(callback);
+  }
+
   init() {
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
