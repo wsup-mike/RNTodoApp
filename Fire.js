@@ -43,7 +43,7 @@ class Fire {
       .collection("lists");
 
     this.unsubscribe = ref.onSnapshot((snapshot) => {
-      lists: [];
+      lists = [];
 
       snapshot.forEach((doc) => {
         lists.push({ id: doc.id, ...doc.data() });

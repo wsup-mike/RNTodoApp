@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
   Modal,
-  KeyboardAvoidingView,
+  ActivityIndicator,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import colors from "./Colors";
@@ -67,6 +67,13 @@ export default class App extends React.Component {
   };
 
   render() {
+    if (this.state.loading) {
+      return (
+        <View style={styles.container}>
+          <ActivityIndicator size="large" color={colors.blue} />
+        </View>
+      );
+    }
     return (
       <View style={styles.container}>
         <Modal
