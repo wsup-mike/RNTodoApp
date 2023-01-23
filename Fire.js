@@ -49,6 +49,12 @@ class Fire {
     });
   }
 
+  addList(list) {
+    let ref = this.ref;
+
+    ref.add(list);
+  }
+
   get userId() {
     return firebase.auth().currentUser.uid;
   }
