@@ -23,6 +23,14 @@ export default class TodoModal extends React.Component {
     this.props.updateList(list);
   };
 
+  addTodo = () => {
+    let list = this.props.list;
+    list.todos.push({ title: this.state.newTodo, completed: false });
+
+    this.props.updateList(list);
+    this.setState({ newTodo: "" });
+  };
+
   renderTodo = (todo, index) => {
     return (
       <View style={styles.todoContainer}>
