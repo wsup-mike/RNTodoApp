@@ -76,7 +76,13 @@ export default class TodoModal extends React.Component {
     return (
       <TouchableOpacity>
         <Animated.View style={styles.deleteButton}>
-          <Animated.Text style={{ color: colors.white, fontWeight: "800" }}>
+          <Animated.Text
+            style={{
+              color: colors.white,
+              fontWeight: "800",
+              transform: [{ scale }],
+            }}
+          >
             Delete
           </Animated.Text>
         </Animated.View>
