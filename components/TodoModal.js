@@ -38,27 +38,29 @@ export default class TodoModal extends React.Component {
 
   renderTodo = (todo, index) => {
     return (
-      <View style={styles.todoContainer}>
-        <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
-          <Ionicons
-            name={todo.completed ? "ios-square" : "ios-square-outline"}
-            size={24}
-            color={colors.gray}
-            style={{ width: 32 }}
-          />
-        </TouchableOpacity>
-        <Text
-          style={[
-            styles.todo,
-            {
-              textDecorationLine: todo.completed ? "line-through" : "none",
-              color: todo.completed ? colors.gray : colors.black,
-            },
-          ]}
-        >
-          {todo.title}
-        </Text>
-      </View>
+      <Swipeable>
+        <View style={styles.todoContainer}>
+          <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
+            <Ionicons
+              name={todo.completed ? "ios-square" : "ios-square-outline"}
+              size={24}
+              color={colors.gray}
+              style={{ width: 32 }}
+            />
+          </TouchableOpacity>
+          <Text
+            style={[
+              styles.todo,
+              {
+                textDecorationLine: todo.completed ? "line-through" : "none",
+                color: todo.completed ? colors.gray : colors.black,
+              },
+            ]}
+          >
+            {todo.title}
+          </Text>
+        </View>
+      </Swipeable>
     );
   };
 
