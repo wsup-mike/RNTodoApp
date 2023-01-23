@@ -98,6 +98,7 @@ export default class TodoModal extends React.Component {
             />
             <TouchableOpacity
               style={[styles.addTodo, { backgroundColor: list.color }]}
+              onPress={() => this.addTodo()}
             >
               <AntDesign name="plus" size={16} color={colors.white} />
             </TouchableOpacity>
