@@ -38,7 +38,9 @@ export default class TodoModal extends React.Component {
 
   renderTodo = (todo, index) => {
     return (
-      <Swipeable>
+      <Swipeable
+        renderRightActions={(_, dragX) => this.rightActions(dragX, index)}
+      >
         <View style={styles.todoContainer}>
           <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
             <Ionicons
