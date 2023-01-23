@@ -85,9 +85,7 @@ export default class App extends React.Component {
             addList={this.addList}
           />
         </Modal>
-        <View>
-          <Text>User: {this.state.user.uid}</Text>
-        </View>
+
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
