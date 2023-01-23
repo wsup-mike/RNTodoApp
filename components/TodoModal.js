@@ -36,6 +36,12 @@ export default class TodoModal extends React.Component {
     Keyboard.dismiss();
   };
 
+  deleteTodo = (index) => {
+    let list = this.props.list;
+    list.todos.splice(index, 1);
+    this.props.updateList(list);
+  };
+
   renderTodo = (todo, index) => {
     return (
       <Swipeable
