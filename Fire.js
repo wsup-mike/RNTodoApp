@@ -10,6 +10,22 @@ const firebaseConfig = {
   appId: "1:869624146801:web:c4fa223290b71a751264d0",
 };
 
-class Fire {}
+class Fire {
+  init() {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+      } else {
+        firebase
+          .auth()
+          .signInAnonymously()
+          .catch((error) => {});
+      }
+    });
+  }
+}
 
 export default Fire;
