@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   },
 
   section: {
-    flex: 1,
+    // flex: 1,
     alignSelf: "stretch",
   },
 
