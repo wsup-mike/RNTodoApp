@@ -31,6 +31,10 @@ export default class App extends React.Component {
         return alert("Uh oh, something went wrong");
       }
 
+      firebase.getLists((lists) => {
+        this.setState({ lists, user }, () => {});
+      });
+
       this.setState({ user });
       console.log(user);
     });
