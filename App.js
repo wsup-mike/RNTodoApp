@@ -41,6 +41,10 @@ export default class App extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    firebase.detach();
+  }
+
   toggleAddTodoModal() {
     this.setState({ addTodoVisible: !this.state.addTodoVisible });
   }
