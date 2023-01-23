@@ -67,6 +67,12 @@ export default class TodoModal extends React.Component {
   };
 
   rightActions = (dragX, index) => {
+    const scale = dragX.interpolate({
+      inputRange: [-100, 0],
+      outputRange: [1, 0.9],
+      extrapolate: "clamp",
+    });
+
     return (
       <TouchableOpacity>
         <Animated.View style={styles.deleteButton}>
