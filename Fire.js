@@ -34,6 +34,14 @@ class Fire {
       }
     });
   }
+
+  getLists(callback) {
+    let ref = firebase
+      .firestore()
+      .collection("users")
+      .doc(this.userId)
+      .collection("lists");
+  }
 }
 
 export default Fire;
