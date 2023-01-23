@@ -80,7 +80,7 @@ export default class TodoModal extends React.Component {
     });
 
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => this.deleteTodo(index)}>
         <Animated.View style={[styles.deleteButton, { opacity: opacity }]}>
           <Animated.Text
             style={{
