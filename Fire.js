@@ -56,6 +56,10 @@ class Fire {
   get userId() {
     return firebase.auth().currentUser.uid;
   }
+
+  detach() {
+    this.unsubscribe();
+  }
 }
 
 export default Fire;
