@@ -73,6 +73,12 @@ export default class TodoModal extends React.Component {
       extrapolate: "clamp",
     });
 
+    const opacity = dragX.interpolate({
+      inputRange: [-100, -20, 0],
+      outputRange: [1, 0.9, 0],
+      extrapolate: "clamp",
+    });
+
     return (
       <TouchableOpacity>
         <Animated.View style={styles.deleteButton}>
