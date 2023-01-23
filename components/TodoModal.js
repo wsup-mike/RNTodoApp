@@ -66,6 +66,16 @@ export default class TodoModal extends React.Component {
     );
   };
 
+  rightActions = (dragX, index) => {
+    return (
+      <TouchableOpacity>
+        <Animated.View>
+          <Animated.Text>Delete</Animated.Text>
+        </Animated.View>
+      </TouchableOpacity>
+    );
+  };
+
   render() {
     const list = this.props.list;
     const taskCount = list.todos.length;
