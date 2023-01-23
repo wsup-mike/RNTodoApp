@@ -20,6 +20,9 @@ export default class App extends React.Component {
   state = {
     addTodoVisible: false,
     lists: tempData,
+    user: {
+      uid: "",
+    },
   };
 
   componentDidMount() {
@@ -68,6 +71,9 @@ export default class App extends React.Component {
             addList={this.addList}
           />
         </Modal>
+        <View>
+          <Text>User: {this.state.user.uid}</Text>
+        </View>
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
@@ -141,5 +147,3 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
 });
-
-// Resume at 5:30
