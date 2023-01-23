@@ -69,7 +69,7 @@ export default class TodoModal extends React.Component {
   rightActions = (dragX, index) => {
     return (
       <TouchableOpacity>
-        <Animated.View>
+        <Animated.View style={styles.deleteButton}>
           <Animated.Text>Delete</Animated.Text>
         </Animated.View>
       </TouchableOpacity>
@@ -199,5 +199,13 @@ const styles = StyleSheet.create({
     color: colors.black,
     fontWeight: "700",
     fontSize: 16,
+  },
+
+  deleteButton: {
+    flex: 1,
+    backgroundColor: colors.red,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 80,
   },
 });
